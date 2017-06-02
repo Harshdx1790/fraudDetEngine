@@ -1,0 +1,2 @@
+Patient_ID,Claim_ID,Claim_Date,Doctor_ID,No_of_Claims,Treatment_Amt,Drug_Amt,Lab_Amt,Length_of_Stay,Patient_Location,Hospital_Location,Diagnosis,Surgery cost,Surgery Name,Claim_Amt,Lab_Tests
+P8101,AA00101213,4/7/2014,DI686,1,83698.3098,70156.478,6650,9,GHAZIABAD,GHAZIABAD,HTNIAcute on CKDILefl Renal Calculus,116539,Actual renal failure,163154.6,19

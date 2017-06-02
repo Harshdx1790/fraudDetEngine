@@ -1,0 +1,6 @@
+Patient_ID,Claim_ID,Claim_Date,Doctor_ID,No_of_Claims,Treatment_Amt,Drug_Amt,Surgery cost,Lab_Amt,Length_of_Stay,Patient_Location,Hospital_Location,Diagnosis,Surgery Name,Claim_Amt,Lab_Tests
+P8102,AA00101214,2/18/2014,DI687,4,560682.94,469968.16,504614.65,5250,73,GHAZIABAD,GHAZIABAD,Ablation Therapy for Arrhythmias,Hysterectomy,1022949.20,15
+P8103,AA00101356,1/4/2014,DI686,2,565287.32,473827.58,508758.59,4550,99,Gurgaon,Gurgaon,HTNIAcute on CKDILefl Renal Calculus,Actual renal failure,1001924.60,13
+P8104,AA00101216,1/6/2015,DI744,3,684412.28,573678.91,615971.05,2450,63,Delhi,Delhi,Abnormal development of the backbone,Low back pain surgery,1204137.00,7
+P8105,AA00101567,11/5/2014,DI540,5,297567.50,249423.05,267810.75,700,63,Noida,Noida,Troublesome gallstones,Cholecystectomy,530053.60,6
+P8101,AA00101213,4/7/2014,DI686,2,673698.31,100156.48,606328.48,6650,9,GHAZIABAD,GHAZIABAD,Breast Cancer,Mastectomy,963154.60,19

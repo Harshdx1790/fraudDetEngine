@@ -1,0 +1,6 @@
+Patient ID,Claim ID,Fraud Score,Reason
+P8102,AA00101214,4,Number of claims made by the patient/day is more than 2
+P8103,AA00101356,2,Total no. of patients for a particular doctor/day is more than 30
+P8104,AA00101216,3,Cost of treatment/person/month; Outlier detection using boxplot (66% weightage) and six sigma rule (34% weightage)
+P8105,AA00101567,2,Total no. of patients for a particular doctor/day is more than 30
+P8101,AA00101213,4,Number of claims made by the patient/day is more than 2

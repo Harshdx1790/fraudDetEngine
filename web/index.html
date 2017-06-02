@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Fraud Detection Engine</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="resource/css/materialize.min.css">
+        <link rel="stylesheet" type="text/css" href="resource/css/angular-material.min.css">
+        <link rel="stylesheet" type="text/css" href="resource/css/fontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" type="text/css" href="resource/css/dataTable/datatables.min.css"/>
+        <link rel="stylesheet" type="text/css" href="resource/css/dataTable/jqueryui.min.css"/>
+        <link rel="stylesheet" type="text/css" href="resource/css/dataTable/jquery-ui.css"/>
+        <link type="text/css" href="resource/css/introjs.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="resource/css/cssLoader.css">
+        <link rel="stylesheet" type="text/css" href="resource/css/toolTip.css">
+    </head>
+    <body>
+            <div class="wrapper" style="" >
+             <!--....................................................................................................................................................-->            
+    <!--header--> 
+                <div>  
+                    <nav>
+                        <div class="nav-wrapper" style="background-color: #fff;color:#0d47a1 ">
+                            <a href="#" class="brand-logo right"><img src="resource/images/logo.jpg" style='width:100%;height:100%'></a>
+                            <ul style="height:100%;width:50%" id="nav-mobile" class="left hide-on-med-and-down">
+                                <li><h4 style="font-family: cursive">Fraud Detection Engine</h4></li>
+                                <!--<li style="margin-left: 20%;height:100%;width:100%" ><img style="height:100%;width:100%" src="resource/images/RecomendationOPT.png"></li>-->
+                            </ul>
+                        </div>
+                    </nav>
+                </div>   
+    <!--end of header--> 
+    <!--....................................................................................................................................................-->
+
+    <!--menu--> 
+                <div>
+                    <nav>
+                        <div style="background-color: #1e88e5" class="nav-wrapper">
+
+                            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                                <li><div><a href="">About us</a></div></li>
+                                <li><div><a href="">Solutions</a></div></li>
+                                <li><div><a href="">Learning</a></div></li>
+                                <li><div><a href="">Community</a></div></li>
+                                <li><div><a  href="">Support</a></div></li>
+                                <!--<li><div><a href="javascript:void(0);" onclick="javascript:introJs().start();" href="">Support</a></div></li>-->
+                                <li data-step="1" data-intro="Please login to use the application!" data-position='left'><div><a class="hideClass waves-effect waves-light modal-trigger" href="#modal1">Sign In</a></div></li>
+                                <li><div><a class="hideClass waves-effect waves-light modal-trigger" href="#modal2">Sign Up</a></div></li>
+                                <li id="userLoginUI1" style="display: none">
+                                    <div><i class='material-icons prefix'>account_circle</i></div>  
+                                </li>
+                                <li id="userLoginUI2" style="display: none;width:200px"></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+    <!--end of menu--> 
+<!--....................................................................................................................................................-->
+<!--<div class="col s12" style="margin: 1%">
+    <a  style="background-color: #000" href="javascript:void(0);" onclick="javascript:introJs().start();" class="waves-effect waves-light btn  pull-right"> <i style="color:#fff; " class="fa fa-play" aria-hidden="true"></i>&nbsp; <span >Take a Tour <span></a>
+    </div>-->
+ <!--....................................................................................................................................................-->           
+         
+<!--body--> 
+
+<div class="col s12" style="margin: 1%" >
+    
+    <div class="row">
+    <div class="col s6">
+      <ul class="tabs tab-demo z-depth-1">
+        <li class="tab col s3" ><a class="active" href="#test1">#ICR/OCR</a></li>
+        <li class="tab col s3 disabled" ><a  href="#test2">Data Mart</a></li>
+        <li class="tab col s3 disabled"><a href="#test3">Fraud Analysis</a></li>
+        <!--<li class="tab col s3"><a href="#test4">Test 4</a></li>-->
+      </ul>
+    </div>
+<!--    <div id="test1" class="col s12">Test 1</div>
+    <div id="test2" class="col s12">Test 2</div>
+    <div id="test3" class="col s12">Test 3</div>
+    <div id="test4" class="col s12">Test 4</div>-->
+  </div>
+   
+    <div class="row">
+        <div class="col s12">
+            <div class="col s2">Hospital Discharge Forms</div>
+            <div class="col s2 float right">Claim Forms</div>
+        </div>   
+    </div>
+    <div class="row">
+        <div class="col s12">
+            <div class="col s2">
+                <div  class="col s12 uploadDiv" align="center" style="border:1px solid #DFDFDF; height:50px;background-color: #dfdfdf;color: #DFDFDF; "> <input disabled type="file" style="display: none" name="file-7[]" id="file-7" onchange="dischargebrowseCSV(event)" class="upload dischargeUpload inputfile inputfile-6" webkitdirectory mozdirectory msdirectory odirectory directory multiple data-multiple-caption="{count} files selected" multiple />
+                        <label class="tour_1" for="file-7"  style="height:32px" ><div style="margin-top: 3%" class="col-sm-8"><span class="col s8"></span></div><strong  style=""><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg> Browse </strong></label> </div>
+            </div>
+            <div class="col s2 float right">
+                <div  class="col s12 uploadDiv" align="center" style="border:1px solid #DFDFDF; height:50px;background-color: #dfdfdf;color: #DFDFDF;"> <input disabled type="file" style="display: none" name="file-8[]" id="file-8" onchange="claimbrowseCSV(event)" class="upload claimUpload inputfile inputfile-8" webkitdirectory mozdirectory msdirectory odirectory directory multiple data-multiple-caption="{count} files selected" multiple />
+                        <label class="tour_1" for="file-8"  style="height:32px" ><div style="margin-top: 3%" class="col-sm-8"><span class="col s8"></span></div><strong  style=""><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg> Browse </strong></label> </div>
+            </div>
+        </div>   
+    </div>
+    <div class="row">
+        <div class="col s12" id="imageDiv" style="height: 500px">
+            <div align="center" class="col s5 roundedBorder" id="dischargeImageDiv" style="overflow: auto;height:100%">
+                <div style="margin-top: 25%;display:none" class="preloader-wrapper big active">
+                    <div class="spinner-layer spinner-blue-only">
+                        <div class="circle-clipper left">
+                            <div class="circle"></div>
+                        </div><div class="gap-patch">
+                            <div class="circle"></div>
+                        </div><div class="circle-clipper right">
+                            <div class="circle"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="dischargeImageDiv2">
+                <h4 style="margin-top: 25%"> Browse to see the image </h4>
+
+            </div>
+            </div>
+            <div align="center" class="col s5 roundedBorder offset-s2 " id="claimImageDiv" style="height:100%;overflow: auto">
+              <h4 style="margin-top: 25%"> Browse to see the image </h4>   
+            </div>
+        </div>
+    </div>
+     <div class="row">
+         <div class="col s12">
+             <div class="col s5">
+                 <div class="col s3">
+                 <a id="dischargeRunEngine" class="waves-effect waves-light btn disabled" onclick="runICREngine(this.id)">Run ICR/OCR Engine</a> 
+                 </div>
+                 <div class="col s6">
+                   <div id="floatBarsG" class="dichargeFloatBarG" style="display: none">
+                        <div id="floatBarsG_1" class="floatBarsG"></div>
+                        <div id="floatBarsG_2" class="floatBarsG"></div>
+                        <div id="floatBarsG_3" class="floatBarsG"></div>
+                        <div id="floatBarsG_4" class="floatBarsG"></div>
+                    </div>   
+                 </div>
+                 <div class="col s3 float right">
+                     
+            <a id="dischargeShowEngine" href="#modal3" class="waves-effect waves-light btn float right disabled modal-trigger">Show Results</a> 
+                 </div> 
+             </div>
+             <div class="col s5 offset-s2">
+                 <div class="col s3">
+                 <a id="claimRunEngine" class="waves-effect waves-light btn disabled" onclick="runICREngine(this.id)">Run ICR/OCR Engine</a> 
+                 </div>
+                 <div class="col s6">
+                 <div id="floatBarsG" class="claimFloatBarG" style="display: none">
+                        <div id="floatBarsG_1" class="floatBarsG"></div>
+                        <div id="floatBarsG_2" class="floatBarsG"></div>
+                        <div id="floatBarsG_3" class="floatBarsG"></div>
+                        <div id="floatBarsG_4" class="floatBarsG"></div>
+                    </div> 
+                 </div>
+                 <div class="col s3 float right">
+            <a id="claimShowEngine"  href="#modal4" class="waves-effect waves-light btn  disabled modal-trigger">Show Results</a> 
+             </div>
+             </div>
+         </div>
+    </div>
+    <div class="row" style="margin-top: 5%">
+         <div class="col s12">
+             <div align="center" class="col s4 offset-s4">
+                 <a id="redirectDataMart" onclick="redirectToDataMart()" class="waves-effect waves-light btn disabled">Proceed to data mart</a> 
+            
+             </div>
+             
+         </div>
+    </div>
+</div>
+
+<!--....................................................................................................................................................-->
+
+<!--modal data--> 
+ <div style="" align="center" id="modal3" class="modal">
+     <div id="modalData3" class="modal-content">
+         
+     </div>
+</div>
+ <div style="" align="center" id="modal4" class="modal">
+     <div id="modalData4" class="modal-content">
+         
+     </div>
+</div>
+
+<!--end of modal data--> 
+
+<!--end of body--> 
+<!--....................................................................................................................................................-->
+
+
+<!--login form-->
+  <!--login form--> 
+      
+          <div style="width:500px" align="center" id="modal1" class="modal">
+              <div class="modal-content">
+                  <h4>Sign In </h4>
+                  <p>Please enter your details</p>
+                  <div class="row">
+                      <div class="col s12">
+                          <div class="input-field col s12">
+                              <i class="material-icons prefix">account_circle</i>
+                              <input id="user_name" type="text" class="validate">
+                              <label for="user_name">User Name</label>
+                          </div>
+                          <div class="input-field col s12">
+                              <i class="material-icons prefix">vpn_key</i>
+                              <input id="password" type="password" class="validate">
+                              <label for="password">Password</label>
+                          </div>
+                      </div>
+                  </div>    
+              </div>
+              <div class="modal-footer">
+                  <a  class=" modal-action modal-close waves-effect waves-green btn-flat" onclick="userDetailsInfo()">Agree</a>
+              </div>
+          </div>
+          
+          
+          <!--end of login form--> 
+
+   <!--registration form-->
+          <div style="" align="center" id="modal2" class="modal">
+              <div class="modal-content">
+                  <h4>Registration Form </h4>
+                  <p>Please enter your details</p>
+                   <div class="row">
+                              <div class="input-field col s12">
+                                   <i class="material-icons prefix">account_circle</i>
+                                  <input id="uName" type="text" class="validate">
+                                  <label for="uName">User Name</label>
+                              </div>
+                          </div>
+                  <div class="row">
+                      <form class="col s12">
+                          <div class="row">
+                              <div class="input-field col s6">
+                                  <i class="material-icons prefix">perm_identity</i>
+                                  <input  id="first_name" type="text" class="validate">
+                                  <label for="first_name">First Name</label>
+                              </div>
+                              <div class="input-field col s6">
+                                  <i class="material-icons prefix">perm_identity</i>
+                                  <input id="last_name" type="text" class="validate">
+                                  <label for="last_name">Last Name</label>
+                              </div>
+                          </div>
+<!--                          <div class="row">
+                              <div class="input-field col s12">
+                                  <input disabled value="I am not editable" id="disabled" type="text" class="validate">
+                                  <label for="disabled">Disabled</label>
+                              </div>
+                          </div>-->
+                          <div class="row">
+                              <div class="input-field col s12">
+                                   <i class="material-icons prefix">vpn_key</i>
+                                  <input id="pwd" type="password" class="validate">
+                                  <label for="pwd">Password</label>
+                              </div>
+                          </div>
+                         
+                          <div class="row">
+                              <div class="input-field col s6">
+                                  <i class="material-icons prefix">email</i>
+                                  <input id="email" type="email" class="validate">
+                                  <label for="email">Email</label>
+                              </div>
+                          
+                              <div class="input-field col s6">
+                                  <i class="material-icons prefix">phone</i>
+                                  <input id="icon_telephone" type="tel" class="validate">
+                                  <label for="icon_telephone">Telephone</label> 
+                              </div>
+                          </div>
+                      </form>
+                  </div>
+              </div>
+              <div class="modal-footer">
+                  <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+              </div>
+          </div>   
+   <!--end of registration form-->
+   
+   <!--footer--> 
+            <div>
+                <footer class="page-footer" style="background-color: #0d47a1">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col l6 s12">
+                                <h5 class="white-text">Karvy Analytics </h5>
+                                <p style="margin:0;font-style: italic;font-family: -webkit-body;" class="grey-text text-lighten-4">Plot No.31,</p>
+                                <p style="margin:0;font-style: italic;font-family: -webkit-body;" class="grey-text text-lighten-4">Financial District,</p>
+                                <p style="margin:0;font-style: italic;font-family: -webkit-body;" class="grey-text text-lighten-4">Gachibowli,</p>
+                                <p style="margin:0;font-style: italic;font-family: -webkit-body;" class="grey-text text-lighten-4">Hyderabad - 500 032,</p>
+                                <p style="margin:0;font-style: italic;font-family: -webkit-body;" class="grey-text text-lighten-4">India.</p>
+                            </div>
+                            <div class="col l4 offset-l2 s12">
+                                <h5 class="white-text">Links</h5>
+                                <ul>
+                                    <li><a class="grey-text text-lighten-3" href="#!"><i class="fa fa-facebook-official" aria-hidden="true"></i>  Facebook </a></li>
+                                    <li><a class="grey-text text-lighten-3" href="#!"><i class="fa fa-linkedin-square" aria-hidden="true"></i> LinkedIn</a></li>
+                                    <li><a class="grey-text text-lighten-3" href="#!"><i class="fa fa-youtube-square" aria-hidden="true"></i> YouTube</a></li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-copyright">
+                        <div align="center" style="font-size: small;" class="container">
+                            Contact Us .  Site Map .  Terms & Conditions . Privacy Policy . <i class="fa fa-copyright" aria-hidden="true"></i> 2016 Powered by @ Karvy Analytics .
+                            <a class="grey-text text-lighten-4 right" href="#!"></a>
+                        </div>
+                    </div>
+                </footer>
+
+            </div>
+<!--end of footer--> 
+<!--....................................................................................................................................................-->
+        </div>
+        
+         <script>var myContextPath = "${pageContext.request.contextPath}"</script>
+        <script type="text/javascript" src="resource/JS/angular/angular.min.js"></script>
+        <script type="text/javascript" src="resource/JS/angular/angular-route.min.js"></script>
+        <script type="text/javascript" src="resource/JS/angular/angular-animate.min.js"></script>
+        <script type="text/javascript" src="resource/JS/angular/angular-aria.min.js"></script>
+        <script type="text/javascript" src="resource/JS/angular/angular-messages.min.js"></script>
+        <script type="text/javascript" src="resource/JS/angular/angular-material.min.js"></script>
+        <script type="text/javascript" src="resource/JS/jquery.min.js"></script>
+        <script type="text/javascript" src="resource/JS/materialize.min.js"></script>
+        <script type="text/javascript" src="resource/JS/datatables.min.js"></script>
+        <!--<script type="text/javascript" src="resource/JS/dataTables.foundation.min.js"></script>-->
+        <script type="text/javascript" src="resource/JS/controller.js"></script>
+        <script type="text/javascript" src="resource/JS/intro.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                 $('.slider').slider();
+            Materialize.updateTextFields();
+            $('ul.tabs').tabs();
+            $('.modal-trigger').leanModal();
+            
+  });
+  
+  function startTour() {
+			var tour = introJs()
+			tour.setOption('tooltipPosition', 'auto');
+			tour.setOption('positionPrecedence', ['left', 'right', 'bottom', 'top'])
+			tour.start()
+		}
+  
+  
+         </script>
+    </body>
+</html>
